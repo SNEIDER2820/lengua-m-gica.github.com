@@ -29,7 +29,7 @@
         </div>
 
         <div class="space-y-4">
-            <button class="mobile-button w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition text-lg active:scale-95 shadow-md" onclick="mostrarInformacion('frases')">
+            <button class="mobile-button w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition text-lg active:scale-95 shadow-md" onclick="mostrarFraseDelDia()">
                 📅 Frases del Día
             </button>
             <button class="mobile-button w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition text-lg active:scale-95 shadow-md" onclick="mostrarInformacion('juegos')">
@@ -46,24 +46,30 @@
     </div>
 
     <script>
+        const frases = [
+            "La práctica hace al maestro.",
+            "Cada día es una nueva oportunidad para aprender.",
+            "El conocimiento es poder.",
+            "La paciencia y la constancia son clave.",
+            "La educación es el arma más poderosa para cambiar el mundo.",
+            "Aprender es un regalo, incluso cuando el dolor es tu maestro.",
+            "Nunca es tarde para aprender algo nuevo.",
+            "Haz de cada día una oportunidad para aprender."
+        ];
+
+        function mostrarFraseDelDia() {
+            const infoDiv = document.getElementById('info');
+            const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+            const contenido = `<h2 class="text-lg font-bold mb-2">Frase del Día</h2><p>${fraseAleatoria}</p>`;
+            infoDiv.innerHTML = contenido;
+            infoDiv.classList.remove('hidden');
+        }
+
         function mostrarInformacion(seccion) {
             const infoDiv = document.getElementById('info');
             let contenido = '';
 
             switch (seccion) {
-                case 'frases':
-                    contenido = '<h2 class="text-lg font-bold mb-2">Frases del Día</h2>' +
-                                '<ul>' +
-                                '<li>"La práctica hace al maestro."</li>' +
-                                '<li>"Cada día es una nueva oportunidad para aprender."</li>' +
-                                '<li>"El conocimiento es poder."</li>' +
-                                '<li>"La paciencia y la constancia son clave."</li>' +
-                                '<li>"La educación es el arma más poderosa para cambiar el mundo."</li>' +
-                                '<li>"Aprender es un regalo, incluso cuando el dolor es tu maestro."</li>' +
-                                '<li>"Nunca es tarde para aprender algo nuevo."</li>' +
-                                '<li>"Haz de cada día una oportunidad para aprender."</li>' +
-                                '</ul>';
-                    break;
                 case 'juegos':
                     contenido = '<h2 class="text-lg font-bold mb-2">Juegos de Vocabulario</h2>' +
                                 '<p>Desafía tu memoria con palabras nuevas.</p>' +
@@ -85,7 +91,6 @@
 </body>
 </html>
 
-        }
     </script>
 </body>
 </html>
