@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lengua Mágica 🌈✨</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            font-family: 'Arial', sans-serif;
+            touch-action: manipulation;
+        }
+        .mobile-button {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-6 rounded-xl shadow-2xl w-full max-w-md mx-auto">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold mb-4 text-purple-600 break-words">
+                Lengua Mágica 🌈✨
+            </h1>
+            <p class="mb-6 text-gray-700 text-lg">
+                Aprende español de forma divertida e interactiva
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            <button class="mobile-button w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition text-lg active:scale-95 shadow-md" onclick="mostrarInformacion('frases')">
+                📅 Frases del Día
+            </button>
+            <button class="mobile-button w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition text-lg active:scale-95 shadow-md" onclick="mostrarInformacion('juegos')">
+                🧩 Juegos de Vocabulario
+            </button>
+            <button class="mobile-button w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition text-lg active:scale-95 shadow-md" onclick="mostrarInformacion('practica')">
+                💬 Práctica de Conversación
+            </button>
+        </div>
+
+        <div id="info" class="mt-6 text-center text-sm text-gray-700 bg-gray-100 p-4 rounded-lg shadow-inner hidden">
+            <!-- Aquí se mostrará la información dinámica -->
+        </div>
+    </div>
+
+    <script>
+        function mostrarInformacion(seccion) {
+            const infoDiv = document.getElementById('info');
+            let contenido = '';
+
+            switch (seccion) {
+                case 'frases':
+                    contenido = '<h2 class="text-lg font-bold mb-2">Frases del Día</h2>' +
+                                '<p>"La práctica hace al maestro."</p>' +
+                                '<p>"Cada día es una nueva oportunidad para aprender."</p>';
+                    break;
+                case 'juegos':
+                    contenido = '<h2 class="text-lg font-bold mb-2">Juegos de Vocabulario</h2>' +
+                                '<p>Desafía tu memoria con palabras nuevas.</p>' +
+                                '<p>Completa crucigramas y juegos interactivos.</p>';
+                    break;
+                case 'practica':
+                    contenido = '<h2 class="text-lg font-bold mb-2">Práctica de Conversación</h2>' +
+                                '<p>Mejora tu fluidez hablando con otros estudiantes.</p>' +
+                                '<p>Accede a sesiones en vivo con tutores.</p>';
+                    break;
+                default:
+                    contenido = '<p>Selecciona una opción para más información.</p>';
+            }
+
+            infoDiv.innerHTML = contenido;
+            infoDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
