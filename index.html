@@ -53,8 +53,16 @@
             switch (seccion) {
                 case 'frases':
                     contenido = '<h2 class="text-lg font-bold mb-2">Frases del Día</h2>' +
-                                '<p>"La práctica hace al maestro."</p>' +
-                                '<p>"Cada día es una nueva oportunidad para aprender."</p>';
+                                '<ul>' +
+                                '<li>"La práctica hace al maestro."</li>' +
+                                '<li>"Cada día es una nueva oportunidad para aprender."</li>' +
+                                '<li>"El conocimiento es poder."</li>' +
+                                '<li>"La paciencia y la constancia son clave."</li>' +
+                                '<li>"La educación es el arma más poderosa para cambiar el mundo."</li>' +
+                                '<li>"Aprender es un regalo, incluso cuando el dolor es tu maestro."</li>' +
+                                '<li>"Nunca es tarde para aprender algo nuevo."</li>' +
+                                '<li>"Haz de cada día una oportunidad para aprender."</li>' +
+                                '</ul>';
                     break;
                 case 'juegos':
                     contenido = '<h2 class="text-lg font-bold mb-2">Juegos de Vocabulario</h2>' +
@@ -72,6 +80,11 @@
 
             infoDiv.innerHTML = contenido;
             infoDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
         }
     </script>
 </body>
